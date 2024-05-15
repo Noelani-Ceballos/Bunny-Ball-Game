@@ -11,9 +11,18 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
        //is the game over?
-    }
 
-    void GameOver() {
+       if (gameOver == true) // Ch
+        {
+            GameOver();
+        }
+            
+        
+    }
+    
+
+    void GameOver() 
+    {
         player.GetComponent<Player>().enabled = false;
         Destroy(player.GetComponent<Rigidbody>());
         winnerUI.SetActive(true);
